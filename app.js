@@ -32,3 +32,10 @@ router.post('/moliendas', async(req,res)=>{
         res.json(error);
     }
 })
+//ruta para consultar una molienda en especifico
+router.get('/moliendas/:id', async(req,res)=>{
+    const id=req.params.id;
+    const respuesta=await Molienda.findById(id);
+    res.json(respuesta);
+}
+)
